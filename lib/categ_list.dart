@@ -11,43 +11,40 @@ List<String> maincateg = [
 ];
 
 List<String> men = [
-  'shirt',
-  't-shirt',
-  'jacket',
-  'vest',
-  'coat',
-  'jeans',
-  'shorts',
-  'suit',
-  'other',
+  'Shirt',
+  'Jacket',
+  'Pants',
+  'Shorts',
+  'Vest',
+  'Gloves',
+  'Hat',
+  'Shoes',
+  'Backpack',
 ];
 List<String> women = [
-  'dress',
-  '2pcs sets',
+  'Dress',
+  'Coat',
+  'Sweater',
   't-shirt',
   'top',
-  'skirt',
-  'jeans',
-  'pants',
-  'coat',
-  'jacket',
-  'other'
+  'Jeans',
+  'Boots'
+  'Bag',
+  'Hat',
 ];
 List<String> electronics = [
   'phone',
   'computer',
   'laptop',
   'smart tv',
-  'phone holder',
-  'charger',
-  'usb cables',
-  'head phone',
-  'smart watch',
+  'Holder',
+  'Chargers',
+  'Buds',
+  'watch',
   'tablet',
   'mouse',
   'keyboard',
   'gaming',
-  'other'
 ];
 
 List<String> shoes = [

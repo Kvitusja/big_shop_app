@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import '../categ_list.dart';
 import '../widgets/gridview_item.dart';
 
-class MenCategory extends StatelessWidget {
-  const MenCategory({Key? key}) : super(key: key);
+class ElectronicsCategory extends StatelessWidget {
+  const ElectronicsCategory({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
         height: MediaQuery.of(context).size.height * 0.78,
         child: GridView.builder(
-            itemCount: men.length,
+            itemCount: electronics.length,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               crossAxisSpacing: 8,
@@ -20,8 +20,8 @@ class MenCategory extends StatelessWidget {
             ),
             itemBuilder: (BuildContext context, index) {
               return GridViewItem(
-                image: 'assets/men/man$index.PNG',
-                itemDescription: men[index],
+                image: 'assets/electronics/electronics$index.PNG',
+                itemDescription: electronics[index],
                 onTap: (){},
                 onPressed: (){},
               );

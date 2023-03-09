@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../categories/electronics_category.dart';
 import '../categories/men_category.dart';
+import '../categories/women_category.dart';
 import '../widgets/custom_search_field.dart';
 
 const List<Widget> categories = [
@@ -139,10 +141,10 @@ class _SearchScreenState extends State<SearchScreen> {
                       child: MenCategory(),
                     ),
                     Center(
-                      child: Text('Women category'),
+                      child: WomenCategory(),
                     ),
                     Center(
-                      child: Text('Electronics category'),
+                      child: ElectronicsCategory(),
                     ),
                     Center(
                       child: Text('Accessories category'),
