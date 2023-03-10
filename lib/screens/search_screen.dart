@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 
+import '../categories/accessories_category.dart';
+import '../categories/bags_category.dart';
+import '../categories/beauty_category.dart';
 import '../categories/electronics_category.dart';
+import '../categories/home_and_garden_category.dart';
+import '../categories/kids_category.dart';
 import '../categories/men_category.dart';
+import '../categories/shoes_screen.dart';
 import '../categories/women_category.dart';
 import '../widgets/custom_search_field.dart';
 
@@ -147,22 +153,22 @@ class _SearchScreenState extends State<SearchScreen> {
                       child: ElectronicsCategory(),
                     ),
                     Center(
-                      child: Text('Accessories category'),
+                      child: AccessoriesCategory(),
                     ),
                     Center(
-                      child: Text('Shoes category'),
+                      child: ShoesCategory(),
                     ),
                     Center(
-                      child: Text('Home & decor category'),
+                      child: HomeAndGardenCategory(),
                     ),
                     Center(
-                      child: Text('Beauty category'),
+                      child: BeautyCategory()
                     ),
                     Center(
-                      child: Text('Bags category'),
+                      child: BagsCategory(),
                     ),
                     Center(
-                      child: Text('Kids category'),
+                      child: KidsCategory(),
                     ),
                   ],
                 ),
