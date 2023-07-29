@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../categ_list.dart';
+import '../helpers/categ_list.dart';
+import '../screens/single_category.dart';
 import '../widgets/gridview_item.dart';
 
 class ElectronicsCategory extends StatelessWidget {
@@ -22,8 +23,15 @@ class ElectronicsCategory extends StatelessWidget {
               return GridViewItem(
                 image: 'assets/electronics/electronics$index.PNG',
                 itemDescription: electronics[index],
-                onTap: (){},
-                onPressed: (){},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => SubcategoryProducts(
+                            subcategoryName: electronics[index],
+                            mainCategoryName: 'Electronics',
+                          )));
+                },
               );
             }));
   }

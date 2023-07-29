@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 
+import '../screens/single_category.dart';
+
 class GridViewItem extends StatelessWidget {
   final String image;
   final String itemDescription;
   final void Function()? onTap;
-  final void Function()? onPressed;
   const GridViewItem({
     Key? key,
     required this.image,
     required this.itemDescription,
-    this.onTap, this.onPressed,
+    this.onTap,
   }) : super(key: key);
 
   @override
@@ -23,8 +24,7 @@ class GridViewItem extends StatelessWidget {
         ),
         child: InkWell(
           onTap: onTap,
-          child: Column(
-              children: [
+          child: Column(children: [
             Flexible(
               flex: 3,
               child: ClipRRect(
@@ -44,7 +44,10 @@ class GridViewItem extends StatelessWidget {
               flex: 1,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text(itemDescription, style: const TextStyle(fontWeight: FontWeight.bold),),
+                child: Text(
+                  itemDescription,
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                ),
               ),
             ),
           ]),

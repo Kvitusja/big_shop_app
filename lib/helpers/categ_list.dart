@@ -28,7 +28,7 @@ List<String> women = [
   't-shirt',
   'top',
   'Jeans',
-  'Boots'
+  'Boots',
   'Bag',
   'Hat',
 ];
@@ -54,7 +54,7 @@ List<String> shoes = [
   'men boots',
   'men canvas',
   'men sport',
-  'men snadals',
+  'men sandals',
   'home slippers',
   'women slippers',
   'women boots',
@@ -88,8 +88,8 @@ List<String> beauty = [
 
 List<String> accessories = [
   'hat',
-  'men sunglass',
-  'w sunglass',
+  'men sunglasses',
+  'sunglasses',
   'classic watch',
   'gloves',
   'belt waist',

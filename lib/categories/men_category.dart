@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../categ_list.dart';
+import '../helpers/categ_list.dart';
+import '../screens/single_category.dart';
 import '../widgets/gridview_item.dart';
 
 class MenCategory extends StatelessWidget {
@@ -22,8 +23,15 @@ class MenCategory extends StatelessWidget {
               return GridViewItem(
                 image: 'assets/men/man$index.PNG',
                 itemDescription: men[index],
-                onTap: (){},
-                onPressed: (){},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => SubcategoryProducts(
+                            subcategoryName: men[index],
+                            mainCategoryName: 'Men',
+                          )));
+                },
               );
             }));
   }

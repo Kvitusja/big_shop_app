@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../categ_list.dart';
+import '../helpers/categ_list.dart';
+import '../screens/single_category.dart';
 import '../widgets/gridview_item.dart';
 
 class HomeAndGardenCategory extends StatelessWidget {
@@ -22,8 +23,15 @@ class HomeAndGardenCategory extends StatelessWidget {
               return GridViewItem(
                 image: 'assets/homegarden/home$index.jpg',
                 itemDescription: homeandgarden[index],
-                onTap: (){},
-                onPressed: (){},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => SubcategoryProducts(
+                            subcategoryName: homeandgarden[index],
+                            mainCategoryName: 'Home and Garden',
+                          )));
+                },
               );
             }));
   }

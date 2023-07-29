@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'screens/customer_home_screen.dart';
 import 'screens/search_screen.dart';
 import 'screens/stores_screen.dart';
 import 'screens/cart_screen.dart';
 import 'screens/user_profile_screen.dart';
+import 'screens/welcome_screen.dart';
+
 
 
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        '/': (context) => const CustomerHomeScreen(),
+        '/': (context) => const WelcomeScreen(),
         SearchScreen.routeName: (context) => const SearchScreen(),
         StoresScreen.routeName: (context) => const StoresScreen(),
         CartScreen.routeName: (context) => const CartScreen(),

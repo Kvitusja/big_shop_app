@@ -1,27 +1,25 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/bottom_navigation_bar.dart';
-import 'cart_screen.dart';
+import 'dashboard_screen.dart';
 import 'home_screen.dart';
-import 'profile_screen.dart';
 import 'search_screen.dart';
 import 'stores_screen.dart';
-import 'user_profile_screen.dart';
 
-class CustomerHomeScreen extends StatefulWidget {
-  const CustomerHomeScreen({Key? key}) : super(key: key);
+class SupplierHomeScreen extends StatefulWidget {
+  const SupplierHomeScreen({Key? key}) : super(key: key);
 
   @override
-  State<CustomerHomeScreen> createState() => _CustomerHomeScreenState();
+  State<SupplierHomeScreen> createState() => _SupplierHomeScreenState();
 }
 
-class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
+class _SupplierHomeScreenState extends State<SupplierHomeScreen> {
   final List<Widget> tabs = [
     const HomeScreen(),
     const SearchScreen(),
     const StoresScreen(),
-    const CartScreen(),
-    const ProfileScreen(),
+    const DashboardScreen(),
+    const Center(child: Text('Upload'),),
   ];
 
   final List<BottomNavigationBarItem> items = const [
@@ -38,12 +36,12 @@ class _CustomerHomeScreenState extends State<CustomerHomeScreen> {
       label: 'Stores',
     ),
     BottomNavigationBarItem(
-      icon: Icon(Icons.shopping_cart),
-      label: 'Cart',
+      icon: Icon(Icons.dashboard),
+      label: 'Dashboard',
     ),
     BottomNavigationBarItem(
-      icon: Icon(Icons.person),
-      label: 'Profile',
+      icon: Icon(Icons.upload),
+      label: 'Upload',
     ),
   ];
 

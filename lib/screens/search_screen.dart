@@ -1,54 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../categories/accessories_category.dart';
-import '../categories/bags_category.dart';
-import '../categories/beauty_category.dart';
-import '../categories/electronics_category.dart';
-import '../categories/home_and_garden_category.dart';
-import '../categories/kids_category.dart';
-import '../categories/men_category.dart';
-import '../categories/shoes_screen.dart';
-import '../categories/women_category.dart';
+import '../helpers/screens_list.dart';
 import '../widgets/custom_search_field.dart';
 
-const List<Widget> categories = [
-  Text(
-    'Men',
-    style: TextStyle(fontSize: 13),
-  ),
-  Text(
-    'Women',
-    style: TextStyle(fontSize: 13),
-  ),
-  Text(
-    'Electronics',
-    style: TextStyle(fontSize: 13),
-  ),
-  Text(
-    'Accessories',
-    style: TextStyle(fontSize: 13),
-  ),
-  Text(
-    'Shoes',
-    style: TextStyle(fontSize: 13),
-  ),
-  Text(
-    'Home & Garden',
-    style: TextStyle(fontSize: 13),
-  ),
-  Text(
-    'Beauty',
-    style: TextStyle(fontSize: 13),
-  ),
-  Text(
-    'Bags',
-    style: TextStyle(fontSize: 13),
-  ),
-  Text(
-    'Kids',
-    style: TextStyle(fontSize: 13),
-  ),
-];
+
 
 class SearchScreen extends StatefulWidget {
   static const routeName = '/search';
@@ -62,23 +17,13 @@ class _SearchScreenState extends State<SearchScreen> {
   final List<bool> _selections = List.generate(9, (_) => false);
   final PageController pageController = PageController();
 
-  // @override
-  // void initState() {
-  //   setState(() {
-  //     for (int i = 0; i < _selections.length; i++) {
-  //       _selections[0] = i == 0;
-  //     }
-  //   });
-  //   super.initState();
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
-            Navigator.of(context).pop();
+            Navigator.of(context).pushNamed('/');
           },
           icon: const Icon(
             Icons.arrow_back,
@@ -115,11 +60,6 @@ class _SearchScreenState extends State<SearchScreen> {
                             duration: const Duration(milliseconds: 100),
                             curve: Curves.easeInCirc);
                       });
-                      // setState(() {
-                      //   for (int i = 0; i < _selections.length; i++) {
-                      //     _selections[i] = i == index;
-                      //   }
-                      // });
                     },
                     children: categories,
                   ),
@@ -142,35 +82,7 @@ class _SearchScreenState extends State<SearchScreen> {
                       }
                     });
                   },
-                  children: const [
-                    Center(
-                      child: MenCategory(),
-                    ),
-                    Center(
-                      child: WomenCategory(),
-                    ),
-                    Center(
-                      child: ElectronicsCategory(),
-                    ),
-                    Center(
-                      child: AccessoriesCategory(),
-                    ),
-                    Center(
-                      child: ShoesCategory(),
-                    ),
-                    Center(
-                      child: HomeAndGardenCategory(),
-                    ),
-                    Center(
-                      child: BeautyCategory()
-                    ),
-                    Center(
-                      child: BagsCategory(),
-                    ),
-                    Center(
-                      child: KidsCategory(),
-                    ),
-                  ],
+                  children: categoryScreens,
                 ),
               )),
         ],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../categ_list.dart';
+import '../helpers/categ_list.dart';
+import '../screens/single_category.dart';
 import '../widgets/gridview_item.dart';
 
 class AccessoriesCategory extends StatelessWidget {
@@ -22,8 +23,15 @@ class AccessoriesCategory extends StatelessWidget {
               return GridViewItem(
                 image: 'assets/accessories/accessories$index.jpg',
                 itemDescription: accessories[index],
-                onTap: (){},
-                onPressed: (){},
+                onTap:  () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => SubcategoryProducts(
+                            subcategoryName: accessories[index],
+                            mainCategoryName: 'Accessories',
+                          )));
+                },
               );
             }));
   }
