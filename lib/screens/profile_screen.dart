@@ -210,7 +210,9 @@ class ProfileScreen extends StatelessWidget {
                                   RepeatedListTile(
                                     title: 'Log Out',
                                     icon: const Icon(Icons.logout),
-                                    onTap: () {},
+                                    onTap: () {
+                                      Navigator.of(context).pushReplacementNamed('/');
+                                    },
                                     subTitle: '',
                                   ),
                                 ],

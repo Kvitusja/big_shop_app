@@ -3,12 +3,25 @@ import 'package:flutter/material.dart';
 import '../widgets/social_media_widget.dart';
 import '../widgets/welcome_logo_animation.dart';
 import '../widgets/welcome_screen_button.dart';
+import '../widgets/welcome_text_animation.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    const colorizedColour = [
+      Colors.purple,
+      Colors.blue,
+      Colors.yellow,
+      Colors.red,
+      Colors.green,
+    ];
+
+    const colorizeTextStyle = TextStyle(
+      fontSize: 30,
+      fontWeight: FontWeight.bold,
+    );
     return Scaffold(
       body: Container(
         constraints: const BoxConstraints.expand(),
@@ -22,9 +35,11 @@ class WelcomeScreen extends StatelessWidget {
           child: Column(
             //mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              const Text(
-                'WELCOME',
-                style: TextStyle(color: Colors.white, fontSize: 30),
+              const WelcomeTextAnimation(
+                firstText: 'WELCOME',
+                secondText: 'DUCK STORE',
+                colorizeTextStyle: colorizeTextStyle,
+                colorizedColour: colorizedColour,
               ),
               const SizedBox(
                 height: 120,
@@ -33,9 +48,11 @@ class WelcomeScreen extends StatelessWidget {
                   image: AssetImage('assets/inapp/logo.jpg'),
                 ),
               ),
-              const Text(
-                'SHOP',
-                style: TextStyle(color: Colors.white, fontSize: 30),
+              const WelcomeTextAnimation(
+                firstText: 'SHOP',
+                secondText: 'MULTI STORE',
+                colorizeTextStyle: colorizeTextStyle,
+                colorizedColour: colorizedColour,
               ),
               SizedBox(
                 height: 25,
@@ -80,10 +97,12 @@ class WelcomeScreen extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        AnimatedContainer(duration: Duration()),
+                        const WelcomeLogoAnimation(),
                         WelcomeScreenButton(
                           text: 'Log In',
-                          function: () {},
+                          function: () {
+                            Navigator.of(context).pushReplacementNamed('/supplier_home_screen');
+                          },
                         ),
                         WelcomeScreenButton(
                           text: 'Sign Up',
@@ -112,7 +131,9 @@ class WelcomeScreen extends StatelessWidget {
                     children: [
                       WelcomeScreenButton(
                         text: 'Log In',
-                        function: () {},
+                        function: () {
+                          Navigator.of(context).pushReplacementNamed('/customer_home_screen');
+                        },
                       ),
                       WelcomeScreenButton(
                         text: 'Sign Up',
@@ -127,7 +148,7 @@ class WelcomeScreen extends StatelessWidget {
                 height: 50,
               ),
               Container(
-                color: Colors.white38,
+                color: Colors.white38.withOpacity(0.35),
                 child: const Padding(
                   padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
                   child: Row(

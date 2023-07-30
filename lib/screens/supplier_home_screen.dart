@@ -7,6 +7,7 @@ import 'search_screen.dart';
 import 'stores_screen.dart';
 
 class SupplierHomeScreen extends StatefulWidget {
+  static const routeName = '/supplier_home_screen';
   const SupplierHomeScreen({Key? key}) : super(key: key);
 
   @override

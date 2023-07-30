@@ -16,7 +16,9 @@ class DashboardScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushReplacementNamed('/');
+            },
             icon: const Icon(
               Icons.logout,
               color: Colors.black,
@@ -38,7 +40,7 @@ class DashboardScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                   Icon(
+                  Icon(
                     dashboardIcons[index],
                     color: Colors.yellowAccent,
                     size: 50,
